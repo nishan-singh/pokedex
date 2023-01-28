@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="icon" href="./img/icons/ball.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="fetchData()">
+    <!-- header -->
+    <nav class="header">
+      <h1>Pokédex</h1>
+      <form action="/action_page.php" id="form">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search Pokemon"
+          id="search-input"
+        />
+        <button type="button" class="delete-btn" onclick="clearSearchBar()">
+          X
+        </button>
+      </form>
+    </nav>
+    <!-- main container -->
+    <div class="main-container" id="main-container"></div>
+    <!-- modal for each Pokemon -->
+    <div class="modal-container" id="modal-container" onclick="closeModalOutside()"></div>
+    <!-- next button -->
+    <div class="next-btn-div">
+      <button onclick="getMorePokemon()" id="get-more-btn">Get More...</button>
+    </div>
+    <a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons"
+      >Pokemon icons created by Smashicons - Flaticon</a
+    >
+    <!-- Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./template.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
