@@ -114,6 +114,7 @@ async function showModal(i) {
   let modalUrl = `https://pokeapi.co/api/v2/pokemon/${i}/`;
   let modalResponse = await fetch(modalUrl);
   let modalData = await modalResponse.json();
+  document.body.style.backgroundColor = "rgba(0, 0, 0, 0.5);";
   document.body.style.overflow = "hidden";
   modal.classList.add("show-modal");
   modal.innerHTML += showSelectedPokemon(modalData, i);
@@ -190,13 +191,12 @@ function closeModal() {
   modal.classList.remove("show-modal");
 }
 
-function closeModalOutside(){
-  closeModal();
-}
+// let innerModal = document.getElementById()
 
-
-function just(){
-  let name = "nishan";
-}
-
-console.log(just);
+modal.addEventListener("click", function (e) {
+  if (e.target.closest("#modal-inner-container")) {
+    return;
+  } else {
+    closeModal();
+  }
+});

@@ -21,8 +21,7 @@ function render(i, data) {
 function showSelectedPokemon(data, i) {
   let type = data["types"][0]["type"]["name"];
   return /*html*/ `
-    <div class="modal-inner-container">
-        <div class="selected-pokemon ${type}" onclick="event.stopPropagation()">
+        <div class="selected-pokemon ${type}" id="selected-pokemon">
           <button class="back-btn" onclick="closeModal()">&#8629</button>
           <div class="selected-pokedex-info">
             <div id="" class="poke-name-type-wrapper">
@@ -67,10 +66,10 @@ function showSelectedPokemon(data, i) {
             </div>
             <div class="moves-wrapper specs-details"></div>
         </div>
-    </div>`;
+      `;
 }
 
-function pkStats(data, i){
+function pkStats(data, i) {
   let type = data["types"][0]["type"]["name"];
   return /*html*/ `
         <tr class="t-row">
@@ -81,6 +80,5 @@ function pkStats(data, i){
               <div class="progress-bar" role="progressbar" style="width: ${data["stats"][i]["base_stat"]}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </td>
-        </tr>`
+        </tr>`;
 }
-
